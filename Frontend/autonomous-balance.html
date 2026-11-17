@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Balance Simulator – Tobias Hagtvedt Borge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-balance">
+  <header>
+    <nav>
+      <a href="index.html" class="logo" aria-label="Tilbake til forsiden">
+        <img src="logo-thb.svg" alt="THB">
+      </a>
+      <ul>
+        <li><a href="index.html#about">Om meg</a></li>
+        <li><a href="index.html#projects">Prosjekter</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="section-inner">
+        <h1>Autonomous Balance Simulator</h1>
+        <p class="lede">
+          Samme CartPole, to regulatorer: en trent DQN-AI-agent og en LQR-kontroller.
+          Ett dytt treffer begge, og ideen er å se forskjellen i hvordan de retter opp. Ideen med dette lille prosjektet er å se at AI ikke alltid er mye bedre, og at noen ganger er det lettere bruke en klassiske algoritmer.
+        </p>
+        <div class="balance-play">
+          <div class="balance-duel">
+            <div class="balance-lane">
+              <div class="balance-hud" aria-live="polite">
+                <h3>DQN</h3>
+                <p>Forsøk <strong id="dqn-episode">1</strong></p>
+                <p>Score <strong id="dqn-score">0</strong></p>
+              </div>
+              <canvas id="dqn-canvas" width="640" height="280" aria-label="DQN CartPole"></canvas>
+            </div>
+            <div class="balance-lane">
+              <div class="balance-hud" aria-live="polite">
+                <h3>LQR</h3>
+                <p>Forsøk <strong id="lqr-episode">1</strong></p>
+                <p>Score <strong id="lqr-score">0</strong></p>
+              </div>
+              <canvas id="lqr-canvas" width="640" height="280" aria-label="LQR CartPole"></canvas>
+            </div>
+          </div>
+          <div class="balance-controls">
+            <button type="button" data-bump="-1">Dytt begge venstre (A / ←)</button>
+            <button type="button" data-bump="1">Dytt begge høyre (D / →)</button>
+          </div>
+          <p id="balance-status" class="file-status">Laster agentene...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="section-inner">
+        <h2>Slik fungerer det</h2>
+        <div class="balance-grid">
+          <article class="stat-card">
+            <h3>DQN</h3>
+            <p>
+              Agenten ser posisjon, fart, vinkel og vinkelhastighet, og velger
+              venstre eller høyre. Det er den samme Keras-modellen som i
+              <code>interactive_pole.py</code>.
+            </p>
+          </article>
+          <article class="stat-card">
+            <h3>LQR</h3>
+            <p>
+              En klassisk linear-quadratic regulator rundt oppreist likevekt.
+              Den regner ut ønsket kraft og gjør den om til samme venstre/høyre-dytt
+              som CartPole-v1, som i <code>lqr_controller.py</code>.
+            </p>
+          </article>
+          <article class="stat-card">
+            <h3>Samme dytt</h3>
+            <p>
+              A / D, piltaster eller knappene gir begge stengene identisk impuls.
+              Faller en mer enn 90 grader, eller vognen kjører av, starter bare
+              den siden på nytt.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section-inner">
+        <h2>Teknologi</h2>
+        <ul class="tech-list">
+          <li>Python</li>
+          <li>Gymnasium CartPole-v1</li>
+          <li>TensorFlow / Keras</li>
+          <li>LQR</li>
+          <li>Pygame</li>
+          <li>NumPy</li>
+        </ul>
+        <p class="empty-note">
+          Siden bruker den lagrede DQN-modellen og samme LQR-gevinster som
+          <code>lqr_controller.py</code>. Originalkoden ligger i
+          <code>Autonomus Balance Simulator</code>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-inner">
+      <p>&copy; 2026 Tobias Hagtvedt Borge</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="data/cartpole_dqn.js"></script>
+  <script src="autonomous-balance.js"></script>
+</body>
+</html>

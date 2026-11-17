@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MatBudsjett-Oversikt – Tobias Hagtvedt Borge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-budget">
+  <header>
+    <nav>
+      <a href="index.html" class="logo" aria-label="Tilbake til forsiden">
+        <img src="logo-thb.svg" alt="THB">
+      </a>
+      <ul>
+        <li><a href="index.html#about">Om meg</a></li>
+        <li><a href="index.html#projects">Prosjekter</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="section-inner">
+        <h1>MatBudsjett-Oversikt</h1>
+        <p class="lede">
+          Last inn Trumf-JSON-filen din for å se totalt forbruk, hva du bruker mest på,
+          og detaljer om produkter og datoer.
+          her er lenke til Trumf: <a href="https://www.trumf.no" target="_blank" rel="noopener noreferrer">Trumf</a>
+        </p>
+        <div class="file-panel">
+          <label>
+            Velg JSON-fil
+            <input id="json-file" type="file" accept=".json,application/json">
+          </label>
+          <p id="file-status" class="file-status">Ingen fil lastet inn ennå.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview">
+      <div class="section-inner">
+        <h2>Oversikt</h2>
+        <div id="period-filters" class="period-filters" role="group" aria-label="Tidsperiode">
+          <button type="button" class="period-btn is-active" data-period="all">Alle</button>
+          <button type="button" class="period-btn" data-period="3y">3 år</button>
+          <button type="button" class="period-btn" data-period="1y">1 år</button>
+          <button type="button" class="period-btn" data-period="6m">6 måneder</button>
+          <button type="button" class="period-btn" data-period="1m">1 måned</button>
+          <button type="button" class="period-btn" data-period="1w">1 uke</button>
+          <button type="button" class="period-btn" data-period="thisWeek">Denne uken</button>
+        </div>
+        <div id="stats" class="stat-grid"></div>
+      </div>
+    </section>
+
+    <section id="top">
+      <div class="section-inner">
+        <h2>Kjeder</h2>
+        <div id="chains"></div>
+        <h2 id="product-heading" class="section-sub">Topp 25 produkter</h2>
+        <div class="toolbar product-toolbar">
+          <input id="product-search" type="search" placeholder="Søk etter produkt">
+        </div>
+        <div id="top-lists" class="product-bars"></div>
+      </div>
+    </section>
+
+    <section id="history">
+      <div class="section-inner">
+        <h2>Handlehistorikk</h2>
+        <div class="toolbar">
+          <input id="search" type="search" placeholder="Søk etter produkt, butikk eller dato">
+        </div>
+        <div id="receipts"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-inner">
+      <p>&copy; 2026 Tobias Hagtvedt Borge</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="matbudsjett.js"></script>
+</body>
+</html>

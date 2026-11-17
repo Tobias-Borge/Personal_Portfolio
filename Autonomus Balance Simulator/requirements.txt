@@ -1,0 +1,10 @@
+numpy
+pygame-ce
+gymnasium
+torch
+stable-baselines3
+tensorboard
+matplotlib
+tqdm
+tensorflow
+keras

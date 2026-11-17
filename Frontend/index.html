@@ -1,0 +1,142 @@
+<!-- This is the main HTML file for the website -->
+<!-- The doctype declaration is the first thing in the file -->
+<!DOCTYPE html>
+<!-- The html tag is the root element of the document -->
+ <!-- The lang attribute is used to set the language of the document -->
+<html lang="no">
+<!-- The head tag contains meta information about the document -->
+<head>
+  <!-- The meta tag is used to set the character set of the document -->
+  <meta charset="UTF-8">
+  <!-- The meta tag is used to set the viewport of the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tobias Hagtvedt Borge – Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!-- The body tag is the main content of the document -->
+<body>
+  <!-- The header tag is the top part of the page -->
+
+  <header>
+    <!-- The nav tag is the navigation part of the page -->
+    <nav>
+      <!-- The logo of the page -->
+      <a href="#hero" class="logo" aria-label="Tobias Hagtvedt Borge">
+        <img src="logo-thb.svg" alt="THB">
+      </a>
+      <!-- The ul tag is the list of links in the navigation -->
+      <ul>
+        <!-- The li tag is the list item in the navigation -->
+        <li><a href="#about">Om meg</a></li>
+        <!-- The li tag is the list item in the navigation -->
+        <li><a href="#projects">Prosjekter</a></li>
+        <!-- The li tag is the list item in the navigation -->
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- The section tag is the hero section of the page -->
+    <section id="hero">
+      <div class="section-inner">
+        <!-- The h1 tag is the title of the hero section -->
+        <h1>Tobias Hagtvedt Borge</h1>
+        <!-- The p tag is the paragraph of the hero section -->
+        <p>Bachelorgrad i Maskiningeniør med fordypning i mekatronikk og automasjon</p>
+        <p>Mastergrad i Robotikk, AI og Autonome Systemer</p>
+      </div>
+    </section>
+
+    <!-- The section tag is the about section of the page -->
+    <section id="about">
+      <div class="section-inner">
+        <!-- The h2 tag is the title of the about section -->
+        <h2>Hvem er jeg?</h2>
+        <!-- The p tag is the paragraph of the about section -->
+        <p>
+          Jeg tror alle har et litt komplisert og eksistensielt forhold til det spørsmålet. Men på papiret er det ikke så vanskelig.
+          Jeg heter Tobias Hagtvedt Borge, jeg er 26 år gammel, født i Sandefjord, men oppvokst i Andebu.
+          Jeg har alltid hatt en interesse for realfag og teknologi, og har alltid likt å lære meg nye ting,
+          så valget av programfag på videregående var ikke vanskelig. Etter tre år med realfag var heller ikke valget av videreutdanning så vanskelig,
+          jeg ville gå noe innen teknologi og vitenskap, og det stod mellom ingeniør og biologi. Jeg valgte ingeniør.
+          Men først ville jeg ta et år i førstegangstjenesten, for å bli litt bedre kjent med meg selv og finne ut hva jeg egentlig ville.
+          Etter det året var jeg glad for at jeg hadde valgt teknologi.
+          Jeg tok en bachelorgrad i maskiningeniør med fordypning i mekatronikk og automasjon på OsloMet, fordi jeg var
+          fascinert av samspillet mellom elektronikk, mekanikk og software. Etter tre år var det tid for en mastergrad,
+          og jeg valgte Informatikk: Robotikk og intelligente systemer ved Universitetet i Oslo.
+          Nå er jeg endelig ferdig med studiene, og klar for å starte i jobbverden.
+        </p>
+        <p>
+          Dette er bare den korte historien om min faglige bakgrunn. Men hvem er jeg egentlig?
+        </p>
+        <p>
+          Jeg liker å holde meg aktiv, og har alltid vært glad i sport, særlig fotball og tennis, og golf står for tur
+          når jeg får tid. Jeg er også glad i gaming, og en god bok eller litt hagearbeid er fine måter å koble av på.
+          Ellers liker jeg å holde på med egne prosjekter — det kan være alt fra koding til å jage personlige
+          løperekorder. Jeg tror det handler om det samme som driver meg faglig: jeg liker å bygge ting, forbedre meg,
+          og se hvor langt jeg kommer.
+        </p>
+        <p>
+          Og kanskje det viktigste av alt er at jeg liker å tilbringe tid med parteren min, familien min og vennene mine.
+        </p>
+      </div>
+    </section>
+
+    <!-- The section tag is the projects section of the page -->
+    <section id="projects">
+      <div class="section-inner">
+        <!-- The h2 tag is the title of the projects section -->
+        <h2>Prosjekter</h2>
+        <a class="project" href="autonomous-balance.html">
+          <h3>Autonomous Balance Simulator</h3>
+          <p>
+            DQN og LQR balanserer samme stang. Ett dytt treffer begge,
+            så du kan se forskjellen i hvordan de retter opp.
+          </p>
+          <span class="project-link">Åpne prosjektet</span>
+        </a>
+        <a class="project" href="matbudsjett.html">
+          <h3>MatBudsjett-Oversikt</h3>
+          <p>
+            Personlig oversikt over matinnkjøp fra Trumf-data. Se totalt forbruk,
+            hva du bruker mest på, og detaljer om produkter og datoer.
+          </p>
+          <span class="project-link">Åpne prosjektet</span>
+        </a>
+        <a class="project" href="finansagent.html">
+          <h3>Portfølje Agent</h3>
+          <p>
+            Agent som vurderer en aksje mot porteføljen din. Den henter kurs og nyheter,
+            kjører en analyse, og gir kun en anbefaling.
+          </p>
+          <span class="project-link">Åpne prosjektet</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- The section tag is the contact section of the page -->
+    <section id="contact">
+      <div class="section-inner">
+        <!-- The h2 tag is the title of the contact section -->
+        <h2>Kontakt</h2>
+        <!-- The p tag is the paragraph of the contact section -->
+        <p>E-post: <a href="mailto:tobi-as@hotmail.no">tobi-as@hotmail.no</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/tobias-borge-2bb83427b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        <p>GitHub: <a href="https://github.com/Tobias-Borge" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- The footer tag is the bottom part of the page -->
+  <footer>
+    <div class="section-inner">
+      <!-- The p tag is the paragraph of the footer -->
+      <p>&copy; 2026 Tobias Hagtvedt Borge</p>
+    </div>
+  </footer>
+
+  <!-- The script tag is the JavaScript file of the website -->
+  <script src="app.js"></script>
+</body>
+</html>
